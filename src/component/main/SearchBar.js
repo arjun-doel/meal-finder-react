@@ -1,10 +1,14 @@
 import React from 'react'
 
-const SearchBar = () => {
+const SearchBar = ({ getUserInput }) => {
   return (
     <>
-      <div>
-        <input type="text" placeholder="Search for meal" />
+      <div className="search-bar">
+        <input 
+          type="text" 
+          placeholder="Search for meal" 
+          onKeyUp={getUserInput}
+        />
       </div>
     </>
   )
