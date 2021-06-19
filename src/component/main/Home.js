@@ -3,12 +3,12 @@ import axios from 'axios'
 import SearchBar from './SearchBar'
 import Card_ from '../Card_'
 import Modal from 'react-bootstrap/Modal'
-import Button from 'react-bootstrap/Button'
 
 const Home = () => {
   const [userInput, setUserInput] = useState('')
   const [meals, setMeals] = useState([])
   const [show, setShow] = useState(false)
+  const [modalInfo, setModalInfo] = useState([])
   const handleClose = () => setShow(false)
 
   useEffect(() => {
@@ -33,32 +33,34 @@ const Home = () => {
 
   //* Open Modal
   const openModal = e => {
-    console.log(e.target.id)
+    const id = e.target.id
+    const filteredArray = meals.filter(ite => ite.idMeal === id)
+    setModalInfo(filteredArray)
     setShow(true)
+
   }
+
+  // console.log(modalID)
 
   return (
     <>
+      {modalInfo.map(ite =>
+        <>
+          <Modal show={show} onHide={handleClose} key={ite.idMeal}>
+            <Modal.Header>
+              <Modal.Title>{ite.strMeal}</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>Woohoo, youre reading this text in a modal!</Modal.Body>
+            <Modal.Footer>
+            </Modal.Footer>
+          </Modal>
+        </>
+      )}
+
       <section className="home">
         <SearchBar
           getUserInput={getUserInput}
         />
-
-        <Modal show={show} onHide={handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>Modal heading</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>Woohoo, youre reading this text in a modal!</Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={handleClose}>
-              Close
-            </Button>
-            <Button variant="primary" onClick={handleClose}>
-              Save Changes
-            </Button>
-          </Modal.Footer>
-        </Modal>
-
         <div className="wrapper">
           {!meals ? <p>Sorry this recipe does not exist</p> :
             meals.map(meal =>
