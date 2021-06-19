@@ -5,42 +5,45 @@
   box-sizing: border-box;
 }
 
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
 //* Navigation
 nav {
   display: flex;
   header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-top: 40px;
+    .drum-stick {
+      color: black;
+      font-size: 40px;
+      transition: 0.6s;
+    }
+    .drum-stick:hover {
+      transform: scale(1.13);
+    }
     .name {
       display: flex;
       align-items: center;
-      transition: 0.6s;
+      color: black;
       h1 {
+        color: black;
         margin-left: 50px;
         float: left;
         font-size: 50px;
         font-family: 'Pacifico', cursive;
       }
-      .drum-stick {
-        margin-left: 10px;
-        font-size: 50px;
-      }
-      @media only screen and (max-width: 700px) {
-        .drum-stick {
-          display: none;
-        }
-      }
     }
-    .name:hover {
-      transform: scale(1.02);
-    }
+    
     .heart {
       margin-right: 50px;
       float: right;
       font-size: 40px;
-      color:red;
+      color: red;
       transition: 0.6s;
     }
     .heart:hover {
@@ -50,7 +53,11 @@ nav {
   }
 }
 
+a {
+  color: black;
+}
 
+//* Home component wrapper & Search
 .home {
   display: flex;
   align-items: center;
@@ -58,6 +65,7 @@ nav {
   flex-direction: column;
   min-height: 50vh;
   input {
+    margin-top: 50px;
     margin-bottom: 50px;
     border: none;
     text-align: center;
@@ -74,4 +82,36 @@ nav {
     align-items: center;
     justify-content: center;
   }
+}
+
+.meal-card {
+  display: flex;
+  flex-direction: column;
+  height: 450px;
+  width: 300px;
+  border-radius: 10px;
+  margin: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.6s;
+  animation: fadein 2s;
+  img {
+    align-items: center;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  .meal-card-body {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-left: 10px;
+    color: rgb(131, 131, 131);
+    p {
+      margin-top: -5px;
+    }
+  }
+}
+.meal-card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  transform: scale(1.05);
 }
