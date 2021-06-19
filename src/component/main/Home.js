@@ -37,7 +37,6 @@ const Home = () => {
     const filteredArray = meals.filter(ite => ite.idMeal === id)
     setModalInfo(filteredArray)
     setShow(true)
-
   }
 
   // console.log(modalID)
@@ -46,13 +45,19 @@ const Home = () => {
     <>
       {modalInfo.map(ite =>
         <>
-          <Modal show={show} onHide={handleClose} key={ite.idMeal}>
-            <Modal.Header>
-              <Modal.Title>{ite.strMeal}</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>Woohoo, youre reading this text in a modal!</Modal.Body>
-            <Modal.Footer>
-            </Modal.Footer>
+          <Modal show={show} onHide={handleClose} key={ite.idMeal} dialogClassName="my-modal">
+            <div className="modal-header">
+              <h2>{ite.strMeal}</h2>
+              <h3>{ite.strArea}</h3>
+            </div>
+            <Modal.Body>
+              <div className="modal-body">
+                <img src={ite.strMealThumb} alt={ite.strMeal} />
+                <div className="instructions">
+                  {ite.strInstructions}
+                </div>
+              </div>
+            </Modal.Body>
           </Modal>
         </>
       )}
