@@ -54,6 +54,7 @@ const Home = () => {
               <div className="modal-body">
                 <img src={ite.strMealThumb} alt={ite.strMeal} />
                 <div className="instructions">
+                  <h4>Method</h4>
                   {ite.strInstructions}
                 </div>
               </div>
