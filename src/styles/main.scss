@@ -24,7 +24,7 @@ nav {
         font-family: 'Pacifico', cursive;
       }
       .drum-stick {
-        margin-left: 25px;
+        margin-left: 10px;
         font-size: 50px;
       }
       @media only screen and (max-width: 700px) {
@@ -47,5 +47,31 @@ nav {
       color: rgb(235, 0, 0);
       transform: scale(1.13);
     }
+  }
+}
+
+
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 50vh;
+  input {
+    margin-bottom: 50px;
+    border: none;
+    text-align: center;
+    border-bottom: 2px solid black;
+    outline: none;
+    width: 200px;
+    width: 200px;
+  }
+  input::placeholder {
+    font-size: 20px;
+  }
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
