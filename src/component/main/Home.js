@@ -2,10 +2,14 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import SearchBar from './SearchBar'
 import Card_ from '../Card_'
+import Modal from 'react-bootstrap/Modal'
+import Button from 'react-bootstrap/Button'
 
 const Home = () => {
   const [userInput, setUserInput] = useState('')
   const [meals, setMeals] = useState([])
+  const [show, setShow] = useState(false)
+  const handleClose = () => setShow(false)
 
   useEffect(() => {
     const getData = async () => {
@@ -27,7 +31,11 @@ const Home = () => {
     setUserInput(e.target.value)
   }
 
-  console.log('input state ->', userInput)
+  //* Open Modal
+  const openModal = e => {
+    console.log(e.target.id)
+    setShow(true)
+  }
 
   return (
     <>
@@ -35,6 +43,22 @@ const Home = () => {
         <SearchBar
           getUserInput={getUserInput}
         />
+
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Modal heading</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>Woohoo, youre reading this text in a modal!</Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              Close
+            </Button>
+            <Button variant="primary" onClick={handleClose}>
+              Save Changes
+            </Button>
+          </Modal.Footer>
+        </Modal>
+
         <div className="wrapper">
           {!meals ? <p>Sorry this recipe does not exist</p> :
             meals.map(meal =>
@@ -44,6 +68,8 @@ const Home = () => {
                   name={meal.strMeal}
                   image={meal.strMealThumb}
                   area={meal.strArea}
+                  id={meal.idMeal}
+                  openModal={openModal}
                 />
               </>
             )
