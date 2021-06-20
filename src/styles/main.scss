@@ -109,6 +109,19 @@ nav {
     margin-top: 20px;
     margin-left: 10px;
     color: rgb(131, 131, 131);
+    .title-fav{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      h5 {
+        color: black;
+      }
+      .fa-heart{
+        margin-right: 20px;
+        font-size: 20px;
+        color: #FF0266;
+      }
+    }
     p {
       margin-top: -5px;
     }

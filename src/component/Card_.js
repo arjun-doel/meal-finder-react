@@ -4,9 +4,12 @@ const Card_ = ({ name, image, area, id, openModal }) => {
   return (
     <>
       <div className="meal-card">
-        <img onClick={openModal} src={image} alt={name} id={id} />
+        <img src={image} alt={name} onClick={openModal} id={id} />
         <div className="meal-card-body">
-          <h5>{name}</h5>
+          <div className="title-fav">
+            <h5>{name}</h5>
+            <i className="far fa-heart"></i>
+          </div>
           <p>{area}</p>
         </div>
       </div>
