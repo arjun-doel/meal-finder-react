@@ -8,7 +8,7 @@ const Card_ = ({ name, image, area, id, openModal }) => {
         <div className="meal-card-body">
           <div className="title-fav">
             <h5>{name}</h5>
-            <i className="far fa-heart"></i>
+            <i className="far fa-heart" id={id}></i>
           </div>
           <p>{area}</p>
         </div>

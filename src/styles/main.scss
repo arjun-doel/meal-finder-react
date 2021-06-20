@@ -59,12 +59,10 @@ nav {
 
 
 //* Home component wrapper & Search
-.home {
+.search{
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  min-height: 50vh;
   input {
     margin-top: 100px;
     margin-bottom: 40px;
@@ -79,10 +77,17 @@ nav {
   input::placeholder {
     font-size: 20px;
   }
+}
+.home {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  min-height: 50vh;
+  overflow: auto;
+  white-space: nowrap;
   .wrapper {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: row;
   }
 }
 
@@ -96,7 +101,7 @@ nav {
   margin: 10px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.6s;
-  animation: fadein 1.3s;
+  animation: fadein 0.8s;
   img {
     align-items: center;
     width: 100%;
@@ -191,7 +196,7 @@ nav {
           border-radius: 20px;
           color: #FF6F00;
           transition: 0.6s;
-          animation: 0.7s fadein;
+          // animation: 2s fadein;
           strong {
             color: black;
           }
