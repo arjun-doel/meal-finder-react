@@ -157,7 +157,7 @@ nav {
     display: flex;
     justify-content: center;
     img {
-      width: 35%;
+      max-width: 35%;
       border-radius: 10px;
       box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     }
@@ -165,6 +165,26 @@ nav {
       margin-left: 30px;
       h4 {
         color: grey;
+      }
+    }
+    .ingredients{
+      display: flex;
+      flex-direction: column;
+      justify-content: left;
+      margin-top: 40px;
+      margin-right: 50px;
+      ul {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        li {
+          margin: 10px;
+          text-decoration: none;
+          list-style: none;
+          background-color: #FFDE03;
+          padding: 10px;
+          border-radius: 10px;
+        }
       }
     }
   }

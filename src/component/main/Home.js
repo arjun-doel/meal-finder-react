@@ -56,6 +56,27 @@ const Home = () => {
                 <div className="instructions">
                   <h4>Method</h4>
                   {ite.strInstructions}
+                  <div className="ingredients">
+                    <ul>
+                      <li>{ite.strIngredient1}</li>
+                      <li>{ite.strIngredient2}</li>
+                      <li>{ite.strIngredient3}</li>
+                      <li>{ite.strIngredient4}</li>
+                      <li>{ite.strIngredient5}</li>
+                      <li>{ite.strIngredient6}</li>
+                      <li>{ite.strIngredient7}</li>
+                      <li>{ite.strIngredient8}</li>
+                      <li>{ite.strIngredient9}</li>
+                      <li>{ite.strIngredient10}</li>
+                      <li>{ite.strIngredient11}</li>
+                      <li>{ite.strIngredient12}</li>
+                      <li>{ite.strIngredient13}</li>
+                      <li>{ite.strIngredient14}</li>
+                      <li>{ite.strIngredient15}</li>
+                      <li>{ite.strIngredient16}</li>
+                      <li>{ite.strIngredient17}</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </Modal.Body>
