@@ -52,31 +52,37 @@ const Home = () => {
             </div>
             <Modal.Body>
               <div className="modal-body">
-                <img src={ite.strMealThumb} alt={ite.strMeal} />
-                <div className="instructions">
-                  <h4>Method</h4>
-                  {ite.strInstructions}
-                  <div className="ingredients">
-                    <ul>
-                      <li>{ite.strIngredient1}</li>
-                      <li>{ite.strIngredient2}</li>
-                      <li>{ite.strIngredient3}</li>
-                      <li>{ite.strIngredient4}</li>
-                      <li>{ite.strIngredient5}</li>
-                      <li>{ite.strIngredient6}</li>
-                      <li>{ite.strIngredient7}</li>
-                      <li>{ite.strIngredient8}</li>
-                      <li>{ite.strIngredient9}</li>
-                      <li>{ite.strIngredient10}</li>
-                      <li>{ite.strIngredient11}</li>
-                      <li>{ite.strIngredient12}</li>
-                      <li>{ite.strIngredient13}</li>
-                      <li>{ite.strIngredient14}</li>
-                      <li>{ite.strIngredient15}</li>
-                      <li>{ite.strIngredient16}</li>
-                      <li>{ite.strIngredient17}</li>
-                    </ul>
+                <div className="img-text">
+                  <img src={ite.strMealThumb} alt={ite.strMeal} />
+                  <div className="instructions">
+                    <h4>Method</h4>
+                    {ite.strInstructions}
                   </div>
+                </div>
+
+                <div className="ingredients">
+                  <ul>
+                    {!ite.strIngredient1 ? false : <li><strong>{ite.strIngredient1}:</strong>  {ite.strMeasure1}</li>}  
+                    {!ite.strIngredient2 ? false : <li><strong>{ite.strIngredient2}:</strong>  {ite.strMeasure2}</li>}  
+                    {!ite.strIngredient3 ? false : <li><strong>{ite.strIngredient3}:</strong>  {ite.strMeasure3}</li>}  
+                    {!ite.strIngredient4 ? false : <li><strong>{ite.strIngredient4}:</strong>  {ite.strMeasure4}</li>}  
+                    {!ite.strIngredient5 ? false : <li><strong>{ite.strIngredient5}:</strong>  {ite.strMeasure5}</li>}  
+                    {!ite.strIngredient6 ? false : <li><strong>{ite.strIngredient6}:</strong>  {ite.strMeasure6}</li>}  
+                    {!ite.strIngredient7 ? false : <li><strong>{ite.strIngredient7}:</strong>  {ite.strMeasure7}</li>}  
+                    {!ite.strIngredient8 ? false : <li><strong>{ite.strIngredient8}:</strong>  {ite.strMeasure8}</li>}  
+                    {!ite.strIngredient9 ? false : <li><strong>{ite.strIngredient9}:</strong>  {ite.strMeasure9}</li>}  
+                    {!ite.strIngredient10 ? false : <li><strong>{ite.strIngredient10}:</strong>  {ite.strMeasure10}</li>}  
+                    {!ite.strIngredient11 ? false : <li><strong>{ite.strIngredient11}:</strong>  {ite.strMeasure11}</li>}  
+                    {!ite.strIngredient12 ? false : <li><strong>{ite.strIngredient12}:</strong>  {ite.strMeasure12}</li>}  
+                    {!ite.strIngredient13 ? false : <li><strong>{ite.strIngredient13}:</strong>  {ite.strMeasure13}</li>}  
+                    {!ite.strIngredient14 ? false : <li><strong>{ite.strIngredient14}:</strong>  {ite.strMeasure14}</li>}  
+                    {!ite.strIngredient15 ? false : <li><strong>{ite.strIngredient15}:</strong>  {ite.strMeasure15}</li>}  
+                    {!ite.strIngredient16 ? false : <li><strong>{ite.strIngredient16}:</strong> </li>}  
+                    {!ite.strIngredient17 ? false : <li><strong>{ite.strIngredient17}:</strong>  {ite.strMeasure17}</li>}  
+                    {!ite.strIngredient18 ? false : <li><strong>{ite.strIngredient18}:</strong>  {ite.strMeasure18}</li>}  
+                    {!ite.strIngredient119 ? false : <li><strong>{ite.strIngredient119}:</strong>  {ite.strMeasure19}</li>}  
+                    {!ite.strIngredient20 ? false : <li><strong>{ite.strIngredient20}:</strong>  {ite.strMeasure20}</li>} 
+                  </ul>
                 </div>
               </div>
             </Modal.Body>

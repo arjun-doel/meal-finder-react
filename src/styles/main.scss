@@ -155,18 +155,23 @@ nav {
   
   .modal-body {
     display: flex;
-    justify-content: center;
-    img {
-      max-width: 35%;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    }
-    .instructions {
-      margin-left: 30px;
-      h4 {
-        color: grey;
+    flex-direction: column;
+    .img-text {
+      display: flex;
+      justify-content: space-between;
+      img {
+        max-width: 35%;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      }
+      .instructions {
+        margin-left: 35px;
+        h4 {
+          color: grey;
+        }
       }
     }
+
     .ingredients{
       display: flex;
       flex-direction: column;
@@ -181,9 +186,18 @@ nav {
           margin: 10px;
           text-decoration: none;
           list-style: none;
-          background-color: #FFDE03;
+          box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
           padding: 10px;
-          border-radius: 10px;
+          border-radius: 20px;
+          color: #FF6F00;
+          transition: 0.6s;
+          animation: 0.7s fadein;
+          strong {
+            color: black;
+          }
+        }
+        li:hover {
+          transform: scale(1.05);
         }
       }
     }
